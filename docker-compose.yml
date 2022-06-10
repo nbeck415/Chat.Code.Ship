@@ -32,6 +32,8 @@ services:
         ipv4_address: 172.20.0.4
 
   runner:
+    labels:
+      shipyard.route: '/'
     build: ./gitlab/runner/
     image: dorgamit/gitlab-runner:latest
     hostname: "runner"
@@ -68,8 +70,6 @@ services:
       - mongo:mongo
 
   rocketchat:
-    labels:
-      shipyard.route: '/'
     image: rocketchat/rocket.chat:latest
     hostname: 'rocketchat'
     volumes:
