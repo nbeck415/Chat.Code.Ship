@@ -68,6 +68,8 @@ services:
       - mongo:mongo
 
   rocketchat:
+    labels:
+      shipyard.route: '/'
     image: rocketchat/rocket.chat:latest
     hostname: 'rocketchat'
     volumes:
